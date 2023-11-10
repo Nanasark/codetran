@@ -1,5 +1,5 @@
-// Import the Axios library to make requests to the OpenAI 
-API
+// Import the Axios library to make requests to the OpenAI API
+
 const axios = require('axios');
 
 // Load the OpenAI API key from a file named ".env"
@@ -35,5 +35,10 @@ client.post('https://api.openai.com/v1/engines/davinci/completions', data)
 // If the request is successful, print the generated text to the console
 
 .then(response =>{
-    
+    console.log(response.data.choices[0].text);
 })
+
+ // If there is an error with the request, print the error message to the console
+ .catch(error => {
+    console.error(error);
+  });
